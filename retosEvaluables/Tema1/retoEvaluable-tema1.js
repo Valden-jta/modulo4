@@ -1,5 +1,13 @@
+const fs = require('fs');
+const readline = require('readline');
+let persona = { name: "", surname: "", age: null };
+
+// MAIN
+mostrarDatos();
+
+
+// Funciones
 function mostrarDatos() {
-  let persona = { name: "", surname: "", age: null };
   // readline
   const rl = readline.createInterface({
     input: process.stdin,
@@ -15,12 +23,12 @@ function mostrarDatos() {
         rl.close();
 
         let fileContent = JSON.stringify(persona, null, 3);
-        let file = fs.writeFile("dataReto3.json", fileContent, (err) => {
+        let file = fs.writeFile("miFichero.json", fileContent, (err) => {
           if (err) throw err;
           console.log("fichero creado");
-          fs.readFile("./dataReto3.json", "utf8", (err, file) => {
+          fs.readFile("./miFichero.json", "utf8", (err, file) => {
             if (err) throw err;
-            console.log(file);
+            console.log(JSON.parse(file));
           });
         });
       });
@@ -28,5 +36,4 @@ function mostrarDatos() {
   });
 }
 
-// MAIN
-mostrarDatos();
+
