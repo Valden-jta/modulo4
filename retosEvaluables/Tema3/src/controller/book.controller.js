@@ -56,7 +56,7 @@ function postBook(req, res) {
 function putBook(req, res) {
   let answer;
   if (book != null) {
-    update (req.body.id, req.body.userId, req.body.title, req.body.type, req.body.genre, req.body.author, req.body.price, req.body.photo, req.body.selected);
+    update(req.body.id, req.body.userId, req.body.title, req.body.type, req.body.genre, req.body.author, req.body.price, req.body.photo, req.body.selected);
     answer = {
       error: false,
       code: 200,
