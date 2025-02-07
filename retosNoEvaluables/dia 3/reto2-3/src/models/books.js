@@ -9,9 +9,13 @@ class Books {
     addBook(book) {
         return this.books.push(book);
     }
+   
+    calcLength() {
+        return this.books.length
+    }
 
     showBooks() {
-        return this.books
+        return this.books.map(book => book.bookInfo());
     }
  
     showById(id) {

@@ -4,10 +4,15 @@ const { Book } = require("../models/book");
 
 /* body de la peticion
 {
-  "id": number
+  "id_" : number,
+  "userId" : number,
   "title": string,
+  "type": string,
+  "genre": string,
   "author": string,
-  "genre": stirng
+  "price": number,
+  "photo": stirng,
+  "selected":boolean
 }
 */
 
@@ -35,7 +40,7 @@ function postBook(req, res) {
   let answer;
   console.log(req.body);
   if (book === null) {
-    book = new Book (req.body.id, req.body.title, req.body.author, req.body.genre);
+    book = new Book (req.body.id, req.body.userId, req.body.title, req.body.type, req.body.genre, req.body.author, req.body.price, req.body.photo, req.body.selected);
     answer = {
       error: false,
       code: 200,
@@ -51,7 +56,7 @@ function postBook(req, res) {
 function putBook(req, res) {
   let answer;
   if (book != null) {
-    updateInfo(req.body.id, req.body.title, req.body.author, req.body.genre)
+    update(req.body.id, req.body.userId, req.body.title, req.body.type, req.body.genre, req.body.author, req.body.price, req.body.photo, req.body.selected);
     answer = {
       error: false,
       code: 200,
