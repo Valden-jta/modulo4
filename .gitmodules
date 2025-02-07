@@ -1,0 +1,8 @@
+[submodule "retosNoEvaluables/dia4/myBooks"]
+	path = retosNoEvaluables/dia4/myBooks
+	url = https://github.com/Valden-jta/MyBooks.git
+	branch = modulo4-tema4
+[submodule "retosEvaluables/Tema4/myBooks"]
+	path = retosEvaluables/Tema4/myBooks
+	url = https://github.com/Valden-jta/MyBooks.git
+	branch = modulo4-tema4
