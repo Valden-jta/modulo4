@@ -1,0 +1,493 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Squada+One&display=swap");
+
+:root {
+  --text-color: #141414;
+  --pokedex-1: rgba(20, 20, 20, 0.7);
+  --pokedex-2: rgba(61, 139, 255, 0.7);
+  --pokedex-3: rgba(184, 134, 11, 0.7);
+  --pokedex-4: rgba(105, 105, 105, 0.7);
+  --pokedex-5: rgba(34, 139, 34, 0.7);
+  --pokedex-6: rgba(219, 112, 147, 0.7);
+  --pokedex-7: rgba(106, 90, 205, 0.7);
+  --pokedex-8: rgba(255, 99, 71, 0.7);
+  --pokedex-9: rgba(238, 238, 238, 0.7);
+  --pokedex-10: rgba(255, 204, 1, 0.7);
+
+  --card-height: 300px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16.5px;
+  font-family: "Nunito Sans";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Squada one";
+  font-weight: 700;
+}
+h1 {
+  font-size: 8em !important;
+}
+h2 {
+  font-size: 4em !important;
+}
+h3 {
+  font-size: 2em !important;
+}
+h4,
+h5,
+h6 {
+  font-size: 1,5em !important;
+}
+
+.heading-decoration {
+  color: rgb(255, 204, 1);
+  text-shadow: 5px 5px 0px #385ca8;
+  font-family: "Squada one";
+}
+.span-to-h3 {
+  font-size: 1em;
+  font-family: "Squada one";
+  font-weight: 700;
+}
+
+/**  ============================================== HERO  ==============================================  */
+/** _____________________________________________________________________________________________________ */
+
+#hero {
+  background-image: url("https://images5.alphacoders.com/135/1351278.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  background-attachment: fixed;
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(0, 0, 0, 0.9) 84%
+  );
+}
+
+#searchBox__input::placeholder {
+  padding: 0 2%;
+  font-size: 1.2em;
+  color: var(--text-color);
+}
+
+#searchBox__button:hover {
+  background-color: #ffd43b;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+#body * {
+  z-index: 10;
+}
+
+/**  ============================================== MODAL  ==============================================  */
+/** _____________________________________________________________________________________________________ */
+
+.circle {
+  width: 200px; 
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; 
+  overflow: hidden; 
+}
+.--small{
+  width:100px;
+  height: 100px;
+}
+.circle img {
+  object-position: center;
+  object-fit: contain;
+}
+
+.chainTitle {
+  font-size:  12px;
+}
+.chain__icon {
+  position: relative;
+  top:63%;
+}
+
+
+/**  ============================================== CARDS  ==============================================  */
+/** _____________________________________________________________________________________________________ */
+
+.pokemonCard {
+  position: relative;
+}
+.pokemonCard .bg-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.cell {
+  transition: all 0.1s ease;
+  .bg {
+    stroke: rgba( 255,255,255,0.5 );
+    fill: rgba( 255,255,255,0.5 );
+    transition: all 1.15s ease;
+  }
+  .stroke {
+    stroke: white;
+    stroke-width: 4px;
+  }
+}
+
+.pokeball {
+  opacity: 0.8;
+}
+
+
+.divider {
+  overflow: hidden;
+  position: relative;
+  height: 20vh;
+}
+
+.divider::before {
+  content: "";
+  font-family: "shape divider from ShapeDividers.com";
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  bottom: -0.1vw;
+  left: -0.1vw;
+  right: -0.1vw;
+  top: -0.1vw;
+  background-size: 150% 160px;
+  background-position: 50% 100%;
+  transform: rotateY(180deg);
+  background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.28 2.17" preserveAspectRatio="none"><path d="M35.28 1.67c-3.07-.55-9.27.41-16.15 0-6.87-.4-13.74-.58-19.13.1v.4h35.28z" fill="%23212529"/><path d="M35.28 1.16c-3.17-.8-7.3.4-10.04.56-2.76.17-9.25-1.47-12.68-1.3-3.42.16-4.64.84-7.04.86C3.12 1.31 0 .4 0 .4v1.77h35.28z" opacity=".5" fill="%23212529"/><path d="M35.28.31c-2.57.84-7.68.3-11.8.43-4.1.12-6.85.61-9.57.28C11.18.69 8.3-.16 5.3.02 2.3.22.57.85 0 .87v1.2h35.28z" opacity=".5" fill="%23212529"/></svg>');
+}
+
+#pokemonCard__image-container {
+  height: 120px;
+}
+#pokemonCard__image {
+  max-height: 150px;
+}
+
+#pokemonName {
+  line-height: 1.1em; 
+  font-size: 1.2vw!important;
+  transition: transform 0.1s linear;
+
+}
+.text-grow {
+  transform: scale(1.2);
+
+}
+.hover-shadow {
+  filter: drop-shadow( 0px 0px 15px 7px rgba(255,204,1,0.44));
+}
+.hidden {
+  visibility: hidden;
+}
+
+.pokemonCard__button {
+  color: var(--pokedex-yellow);
+}
+.bg-custom {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-custom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://corporate.pokemon.com/hero-pokeball-3430739968171e9fe85357e4739be704.png");
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.bg-custom > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* spinner */
+
+.spinner {
+  top:34%;
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(to bottom, rgb(254, 0, 1) 50%, white 50%);
+  border-radius: 50%;
+  border: 8px solid black;
+  animation: vibrate-1 0.3s linear 1000ms both;
+  overflow: hidden;
+}
+
+.spinner::before {
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 100px;
+  background: black;
+  top: 43px;
+  transform: translatey(-50%);
+}
+
+.spinner::after {
+  content: "";
+  position: absolute;
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  background: white;
+  top: 42px;
+  left: 42px;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 0 8px black, inset 0 0 0 10px white,
+    inset 0 0 0 12px black;
+}
+
+
+/* vibrate Animation */
+@keyframes vibrate-1 {
+  0% {
+    transform: translate(0);
+    
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  70% {
+    transform: translateZ(0);
+    animation-timing-function: ease-out;
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0);
+    transform: translateZ(500px);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+}
+
+
+
+/**  ============================================== AUXILIARES  ==============================================  */
+/* ==================================== POKEDEX COLORS ==================================== */
+.poke-color--1 {
+  background-color: var(--pokedex-1);
+}
+.poke-color--2 {
+  background-color: var(--pokedex-2);
+}
+.poke-color--3 {
+  background-color: var(--pokedex-3);
+}
+.poke-color--4 {
+  background-color: var(--pokedex-4);
+}
+.poke-color--5 {
+  background-color: var(--pokedex-5);
+}
+.poke-color--6 {
+background-color: var(--pokedex-6);
+}
+.poke-color--7 {
+  background-color: var(--pokedex-7);
+}
+.poke-color--8 {
+  background-color: var(--pokedex-8);
+}
+.poke-color--9 {
+  background-color: var(--pokedex-9);
+}
+.poke-color--10 {
+  background-color: var(--pokedex-10);
+}
+
+/* ==================================== POKEMON TYPES ==================================== */
+.poke-type--1 {
+  background-color: #a8a77a;
+}
+.poke-tt--1 {
+  --bs-tooltip-bg: #a8a77a;
+  --bs-tooltip-color: var(--pokedex-black);
+}
+.poke-type--2 {
+  background-color: #c22e28;
+  color: white;
+}
+.poke-tt--2 {
+  --bs-tooltip-bg: #c22e28;
+  --bs-tooltip-color: white;
+}
+.poke-type--3 {
+  background-color: #a98ff3;
+}
+.poke-tt--3 {
+  --bs-tooltip-bg: #a98ff3;
+  --bs-tooltip-color: white;
+}
+.poke-type--4 {
+  background-color: #a33ea1;
+}
+.poke-tt--4 {
+  --bs-tooltip-bg: #a33ea1;
+  --bs-tooltip-color: white;
+}
+.poke-type--5 {
+  background-color: #e2bf65;
+}
+.poke-tt--5 {
+  --bs-tooltip-bg: #e2bf65;
+  --bs-tooltip-color: var(--pokedex-black);
+}
+.poke-type--6 {
+  background-color: #b6a136;
+}
+.poke-tt--6 {
+  --bs-tooltip-bg: #b6a136;
+  --bs-tooltip-color: white;
+}
+.poke-type--7 {
+  background-color: #a6b91a;
+}
+.poke-tt--7 {
+  --bs-tooltip-bg: #a6b91a;
+  --bs-tooltip-color: white;
+}
+.poke-type--8 {
+  background-color: #735797;
+}
+.poke-tt--8 {
+  --bs-tooltip-bg: #735797;
+  --bs-tooltip-color: white;
+}
+.poke-type--9 {
+  background-color: #b7b7ce;
+}
+.poke-tt--9 {
+  --bs-tooltip-bg: #b7b7ce;
+  --bs-tooltip-color: var(--pokedex-black);
+}
+.poke-type--10 {
+  background-color: #ee8130;
+}
+.poke-tt--10 {
+  --bs-tooltip-bg: #ee8130;
+  --bs-tooltip-color: white;
+}
+.poke-type--11 {
+  background-color: #6390f0;
+}
+.poke-tt--11 {
+  --bs-tooltip-bg: #6390f0;
+  --bs-tooltip-color: white;
+}
+.poke-type--12 {
+  background-color: #7ac74c;
+}
+.poke-tt--12 {
+  --bs-tooltip-bg: #7ac74c;
+  --bs-tooltip-color: white;
+}
+.poke-type--13 {
+  background-color: #f7d02c;
+}
+.poke-tt--13 {
+  --bs-tooltip-bg: #f7d02c;
+  --bs-tooltip-color: white;
+}
+.poke-type--14 {
+  background-color: #f95587;
+}
+.poke-tt--14 {
+  --bs-tooltip-bg: #f95587;
+  --bs-tooltip-color: white;
+}
+.poke-type--15 {
+  background-color: #96d9d6;
+}
+.poke-tt--15 {
+  --bs-tooltip-bg: #96d9d6;
+  --bs-tooltip-color: var(--pokedex-black);
+}
+.poke-type--16 {
+  background-color: #6f35fc;
+}
+.poke-tt--16 {
+  --bs-tooltip-bg: #6f35fc;
+  --bs-tooltip-color: white;
+}
+.poke-type--17 {
+  background-color: #705746;
+}
+.poke-tt--17 {
+  --bs-tooltip-bg: #705746;
+  --bs-tooltip-color: white;
+}
+.poke-type--18 {
+  background-color: #d685ad;
+}
+.poke-tt--18 {
+  --bs-tooltip-bg: #d685ad;
+  --bs-tooltip-color: white;
+}
+.poke-type--19 {
+  background-color: #ffd700;
+}
+.poke-tt--19 {
+  --bs-tooltip-bg: #ffd700;
+  --bs-tooltip-color: var(--pokedex-black);
+}
+.poke-type--20 {
+  background-color: #68a090;
+}
+.poke-tt--20 {
+  --bs-tooltip-bg: #68a090;
+  --bs-tooltip-color: white;
+}
