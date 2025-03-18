@@ -49,7 +49,7 @@ h3 {
 h4,
 h5,
 h6 {
-  font-size: 1,5em !important;
+  font-size: 1, 5em !important;
 }
 
 .heading-decoration {
@@ -110,17 +110,17 @@ h6 {
 /** _____________________________________________________________________________________________________ */
 
 .circle {
-  width: 200px; 
+  width: 200px;
   height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%; 
-  overflow: hidden; 
+  border-radius: 50%;
+  overflow: hidden;
 }
-.--small{
-  width:100px;
-  height: 100px;
+.--small {
+  width: 90px;
+  height: 90px;
 }
 .circle img {
   object-position: center;
@@ -128,13 +128,12 @@ h6 {
 }
 
 .chainTitle {
-  font-size:  12px;
+  font-size: 12px;
 }
 .chain__icon {
   position: relative;
-  top:63%;
+  top: 63%;
 }
-
 
 /**  ============================================== CARDS  ==============================================  */
 /** _____________________________________________________________________________________________________ */
@@ -153,8 +152,8 @@ h6 {
 .cell {
   transition: all 0.1s ease;
   .bg {
-    stroke: rgba( 255,255,255,0.5 );
-    fill: rgba( 255,255,255,0.5 );
+    stroke: rgba(255, 255, 255, 0.5);
+    fill: rgba(255, 255, 255, 0.5);
     transition: all 1.15s ease;
   }
   .stroke {
@@ -166,7 +165,6 @@ h6 {
 .pokeball {
   opacity: 0.8;
 }
-
 
 .divider {
   overflow: hidden;
@@ -199,17 +197,15 @@ h6 {
 }
 
 #pokemonName {
-  line-height: 1.1em; 
-  font-size: 1.2vw!important;
+  line-height: 1.1em;
+  font-size: 1.2vw !important;
   transition: transform 0.1s linear;
-
 }
 .text-grow {
   transform: scale(1.2);
-
 }
 .hover-shadow {
-  filter: drop-shadow( 0px 0px 15px 7px rgba(255,204,1,0.44));
+  filter: drop-shadow(0px 0px 15px 7px rgba(255, 204, 1, 0.44));
 }
 .hidden {
   visibility: hidden;
@@ -246,7 +242,7 @@ h6 {
 /* spinner */
 
 .spinner {
-  top:34%;
+  top: 34%;
   height: 100px;
   width: 100px;
   background: linear-gradient(to bottom, rgb(254, 0, 1) 50%, white 50%);
@@ -280,12 +276,10 @@ h6 {
     inset 0 0 0 12px black;
 }
 
-
 /* vibrate Animation */
 @keyframes vibrate-1 {
   0% {
     transform: translate(0);
-    
   }
   20% {
     transform: translate(-2px, 2px);
@@ -314,8 +308,6 @@ h6 {
   }
 }
 
-
-
 /**  ============================================== AUXILIARES  ==============================================  */
 /* ==================================== POKEDEX COLORS ==================================== */
 .poke-color--1 {
@@ -334,7 +326,7 @@ h6 {
   background-color: var(--pokedex-5);
 }
 .poke-color--6 {
-background-color: var(--pokedex-6);
+  background-color: var(--pokedex-6);
 }
 .poke-color--7 {
   background-color: var(--pokedex-7);
